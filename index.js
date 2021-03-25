@@ -41,12 +41,10 @@ io.on('connection', socket => {
             socket.broadcast.emit('newMessage', {
                 message: message,
                 user: 'admin'
-            }) // <-----TODO-----
+            })
         })
         .on('message', data => {
             // Receive a new message
-            console.log('Message received')
-            console.log(data)
             socket.broadcast.emit('newMessage', data) // <-----TODO----- Note, only emits to all OTHER clients, not sender.
         })
 })
