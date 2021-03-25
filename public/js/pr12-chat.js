@@ -60,7 +60,8 @@ const addMessage = (data = {}, user = false) => {
         s = '0' + s;
     }
     const time = h + ':' + m + ':' + s;
-    msg = time + ' ' + data.user + ': ' + data.message;
-    li.appendChild(document.createTextNode(msg));
+    const boldUser = document.createElement('b').appendChild(document.createTextNode(data.user));
+    msg = time + ' <b>' + data.user + '</b>: ' + data.message;
+    li.innerHTML = msg;
     chatBox.appendChild(li)
 }
