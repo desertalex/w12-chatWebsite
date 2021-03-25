@@ -3,7 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 
-const PORT = process.env.PORT || 3000 // So we can run on heroku || (OR) localhost:5000
+const PORT = process.env.PORT || 3000 // So we can run on heroku || (OR) localhost3000
 
 const app = express()
 
