@@ -42,3 +42,12 @@ ul.chat li.uMessage {
 .displayname {
     font-size: 1.5em;
 }
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+    .input {
+        width: 60%;
+    }
+}

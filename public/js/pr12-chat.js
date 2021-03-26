@@ -68,7 +68,7 @@ const addMessage = (data = {}, user = false) => {
         h = 12;
     }
     const time = h + ':' + m + ':' + '<small>' + s + '</small>' + ampm;
-    msg = time + ' <b style="color:red">' + data.user + '</b>: ' + data.message;
+    msg = time + ' <b style="color:red">' + data.user + '</b>:<br>' + data.message;
     li.innerHTML = msg;
     chatBox.appendChild(li)
 }
