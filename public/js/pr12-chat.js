@@ -50,7 +50,7 @@ const addMessage = (data = {}, user = false) => {
         li.className = 'message uMessage';
     }
     const d = new Date();
-    const h = d.getHours();
+    var h = d.getHours();
     var m = d.getMinutes();
     if (m < 10) {
         m = '0' + m;
@@ -59,9 +59,16 @@ const addMessage = (data = {}, user = false) => {
     if (s < 10) {
         s = '0' + s;
     }
-    const time = h + ':' + m + ':' + s;
-    const boldUser = document.createElement('b').appendChild(document.createTextNode(data.user));
-    msg = time + ' <b>' + data.user + '</b>: ' + data.message;
+    var ampm = 'AM';
+    if (h >= 12) {
+        h = h - 12;
+        ampm = 'PM';
+    }
+    if (h == 0) {
+        h = 12;
+    }
+    const time = h + ':' + m + ':' + '<small>' + s + '</small>' + ampm;
+    msg = time + ' <b style="color:red">' + data.user + '</b>: ' + data.message;
     li.innerHTML = msg;
     chatBox.appendChild(li)
 }
